@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A906CD1F-F561-4AC4-808E-5FDF9A132D56}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudStudio.GUI</RootNamespace>
+    <AssemblyName>CloudStudio.GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <NuGetPackageImportStamp>b9e71d91</NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>0</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>0</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CloudStudio.GUI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cloud_studio.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK, Version=2.3.33.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.2.3.33.0\lib\net35\AWSSDK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-client\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.96.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\FilteredRdsInstance.cs" />
+    <Compile Include="Model\FilteredElasticLoadBalancer.cs" />
+    <Compile Include="Model\FilteredInternetGateway.cs" />
+    <Compile Include="Model\FilteredObject.cs" />
+    <Compile Include="Model\FilteredInstance.cs" />
+    <Compile Include="Utils\AutoCompleteHelper.cs" />
+    <Compile Include="Classes\AwsServiceProxy.cs" />
+    <Compile Include="Utils\AwsUtils.cs" />
+    <Compile Include="Classes\SelectableVpc.cs" />
+    <Compile Include="Controls\CloudView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CloudView.Designer.cs">
+      <DependentUpon>CloudView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Drawing\Grid.cs" />
+    <Compile Include="Classes\Drawing\ElbLine.cs" />
+    <Compile Include="Classes\Drawing\Line.cs" />
+    <Compile Include="Classes\Drawing\Node.cs" />
+    <Compile Include="Forms\CreateImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateImage.Designer.cs">
+      <DependentUpon>CreateImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableKeypairsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableKeypairsWindow.Designer.cs">
+      <DependentUpon>DockableKeypairsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableWelcomeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableWelcomeWindow.Designer.cs">
+      <DependentUpon>DockableWelcomeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableConsoleWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableConsoleWindow.Designer.cs">
+      <DependentUpon>DockableConsoleWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockablePowerShellWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockablePowerShellWindow.Designer.cs">
+      <DependentUpon>DockablePowerShellWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableCloudViewWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableCloudViewWindow.Designer.cs">
+      <DependentUpon>DockableCloudViewWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableLegendWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableLegendWindow.Designer.cs">
+      <DependentUpon>DockableLegendWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableOutputWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableOutputWindow.Designer.cs">
+      <DependentUpon>DockableOutputWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockablePropertiesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockablePropertiesWindow.Designer.cs">
+      <DependentUpon>DockablePropertiesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableToolboxWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableToolboxWindow.Designer.cs">
+      <DependentUpon>DockableToolboxWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCloudAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCloudAccount.Designer.cs">
+      <DependentUpon>AddCloudAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCustomEndpoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCustomEndpoint.Designer.cs">
+      <DependentUpon>AddCustomEndpoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddFavoriteAMI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddFavoriteAMI.Designer.cs">
+      <DependentUpon>AddFavoriteAMI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddBlockDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddBlockDevice.Designer.cs">
+      <DependentUpon>AddBlockDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddSecurityGroupRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSecurityGroupRule.Designer.cs">
+      <DependentUpon>AddSecurityGroupRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CloudAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CloudAccounts.Designer.cs">
+      <DependentUpon>CloudAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddSecurityGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddSecurityGroup.Designer.cs">
+      <DependentUpon>AddSecurityGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConnectSSH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConnectSSH.Designer.cs">
+      <DependentUpon>ConnectSSH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CopySnapshot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CopySnapshot.Designer.cs">
+      <DependentUpon>CopySnapshot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateSnapshot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateSnapshot.Designer.cs">
+      <DependentUpon>CreateSnapshot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCloudAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCloudAccount.Designer.cs">
+      <DependentUpon>EditCloudAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ErrorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ErrorList.Designer.cs">
+      <DependentUpon>ErrorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InternetGateways.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InternetGateways.Designer.cs">
+      <DependentUpon>InternetGateways.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LaunchInstance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LaunchInstance.Designer.cs">
+      <DependentUpon>LaunchInstance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewKeypair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewKeypair.Designer.cs">
+      <DependentUpon>NewKeypair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PasteInstance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasteInstance.Designer.cs">
+      <DependentUpon>PasteInstance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preferences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preferences.Designer.cs">
+      <DependentUpon>Preferences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegisterImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterImage.Designer.cs">
+      <DependentUpon>RegisterImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SecretKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SecretKey.Designer.cs">
+      <DependentUpon>SecretKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SecurityGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SecurityGroups.Designer.cs">
+      <DependentUpon>SecurityGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectVPCs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectVPCs.Designer.cs">
+      <DependentUpon>SelectVPCs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TagEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TagEditor.Designer.cs">
+      <DependentUpon>TagEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Variables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Variables.Designer.cs">
+      <DependentUpon>Variables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Keypairs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Keypairs.Designer.cs">
+      <DependentUpon>Keypairs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VolumeAttachments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VolumeAttachments.Designer.cs">
+      <DependentUpon>VolumeAttachments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Volumes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Volumes.Designer.cs">
+      <DependentUpon>Volumes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMDIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMDIForm.Designer.cs">
+      <DependentUpon>MainMDIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\FavoriteAMI.cs" />
+    <Compile Include="Settings\CustomEndpoint.cs" />
+    <Compile Include="Forms\DockableToolWindows\DockableSnapshotsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\DockableSnapshotsWindow.Designer.cs">
+      <DependentUpon>DockableSnapshotsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\DockHelperUtils.cs" />
+    <Compile Include="Themes\VS2012ColorTable.cs" />
+    <Compile Include="Themes\VS2012ToolStripExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Themes\VS2012ToolStripExtender.Designer.cs">
+      <DependentUpon>VS2012ToolStripExtender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\VS2012ToolStripRenderer.cs" />
+    <Compile Include="Forms\DockableToolWindows\BaseDockableWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockableToolWindows\BaseDockableWindow.Designer.cs">
+      <DependentUpon>BaseDockableWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ClipboardUtils.cs" />
+    <Compile Include="Utils\MessageUtils.cs" />
+    <Compile Include="Utils\ReflectionUtils.cs" />
+    <EmbeddedResource Include="Controls\CloudView.resx">
+      <DependentUpon>CloudView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateImage.resx">
+      <DependentUpon>CreateImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockableKeypairsWindow.resx">
+      <DependentUpon>DockableKeypairsWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockableWelcomeWindow.resx">
+      <DependentUpon>DockableWelcomeWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockableConsoleWindow.resx">
+      <DependentUpon>DockableConsoleWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockablePowerShellWindow.resx">
+      <DependentUpon>DockablePowerShellWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockableCloudViewWindow.resx">
+      <DependentUpon>DockableCloudViewWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockableLegendWindow.resx">
+      <DependentUpon>DockableLegendWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockableOutputWindow.resx">
+      <DependentUpon>DockableOutputWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockablePropertiesWindow.resx">
+      <DependentUpon>DockablePropertiesWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockableToolboxWindow.resx">
+      <DependentUpon>DockableToolboxWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCloudAccount.resx">
+      <DependentUpon>AddCloudAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCustomEndpoint.resx">
+      <DependentUpon>AddCustomEndpoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddFavoriteAMI.resx">
+      <DependentUpon>AddFavoriteAMI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddBlockDevice.resx">
+      <DependentUpon>AddBlockDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSecurityGroupRule.resx">
+      <DependentUpon>AddSecurityGroupRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CloudAccounts.resx">
+      <DependentUpon>CloudAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddSecurityGroup.resx">
+      <DependentUpon>AddSecurityGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConnectSSH.resx">
+      <DependentUpon>ConnectSSH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CopySnapshot.resx">
+      <DependentUpon>CopySnapshot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateSnapshot.resx">
+      <DependentUpon>CreateSnapshot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCloudAccount.resx">
+      <DependentUpon>EditCloudAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorList.resx">
+      <DependentUpon>ErrorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InternetGateways.resx">
+      <DependentUpon>InternetGateways.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LaunchInstance.resx">
+      <DependentUpon>LaunchInstance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewKeypair.resx">
+      <DependentUpon>NewKeypair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasteInstance.resx">
+      <DependentUpon>PasteInstance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preferences.resx">
+      <DependentUpon>Preferences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterImage.resx">
+      <DependentUpon>RegisterImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SecretKey.resx">
+      <DependentUpon>SecretKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SecurityGroups.resx">
+      <DependentUpon>SecurityGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectVPCs.resx">
+      <DependentUpon>SelectVPCs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TagEditor.resx">
+      <DependentUpon>TagEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Variables.resx">
+      <DependentUpon>Variables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Keypairs.resx">
+      <DependentUpon>Keypairs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VolumeAttachments.resx">
+      <DependentUpon>VolumeAttachments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Volumes.resx">
+      <DependentUpon>Volumes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMDIForm.resx">
+      <DependentUpon>MainMDIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\DockableToolWindows\DockableSnapshotsWindow.resx">
+      <DependentUpon>DockableSnapshotsWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DockableToolWindows\BaseDockableWindow.resx">
+      <DependentUpon>BaseDockableWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cloud_studio.ico" />
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cloud Studio Controls\Cloud Studio Controls.csproj">
+      <Project>{da43dc29-d3c1-4b27-bfb7-a35368fcaf22}</Project>
+      <Name>Cloud Studio Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud Studio Services\Cloud Studio Services.csproj">
+      <Project>{5d13a362-b4a1-4d18-8483-907e76acc675}</Project>
+      <Name>Cloud Studio Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud Studio Shared Library\Cloud Studio Shared Library.csproj">
+      <Project>{32119f01-1e89-45fb-8779-b5871afffa02}</Project>
+      <Name>Cloud Studio Shared Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dock Panel Suite\WinFormsUI.csproj">
+      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.96.0\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.96.0\build\net40\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.96.0\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.96.0\build\net40\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="CloudStudio.SharedLibrary"
+                   namespace="CloudStudio.SharedLibrary.Domain">
+
+  <class name="CloudProvider" table="cloudproviders">
+    <id name="Id">
+      <generator class="guid" />
+    </id>
+    <property name="Provider" />
+    <property name="AccessKey" />
+    <property name="SecretKey" />
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="CloudStudio.SharedLibrary"
+                   namespace="CloudStudio.SharedLibrary.Domain">
+
+  <class name="InstanceSSHConnection" table="instancesshconnections">
+    <id name="Id">
+      <generator class="guid" />
+    </id>
+    <property name="CloudAccountId" type="Guid" />
+    <property name="InstanceId" />
+    <property name="UserName" />
+    <property name="KeyFilePath" />
+    
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="CloudStudio.SharedLibrary"
+                   namespace="CloudStudio.SharedLibrary.Domain">
+
+  <class name="CloudAccount" table="cloudaccounts">
+    <id name="Id">
+      <generator class="guid" />
+    </id>
+    <!--<many-to-one name="Provider" class="CloudProvider" />-->
+    <property name="Description" />
+    <property name="Provider" />
+    <property name="AccessKey" />
+    <property name="SecretKey" />
+    <property name="Region" />
+    <property name="Enabled" type="boolean">
+      <column name="Enabled" default="false"/>
+    </property>
+    <property name="ReadOnlyMode" type="boolean">
+      <column name="ReadOnlyMode" default="false"/>
+    </property>
+    
+  </class>
+
+</hibernate-mapping>
